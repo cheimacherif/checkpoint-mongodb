@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Express Checkpoint</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+
+    <%- include('navbar') %>
+   
+      <% if (workinghours){ %>
+      <h1>Welcome to our Shop</h1>
+      <div class="products">
+        <div class="card">
+            <img src="./assets/laptop.jpg" alt="laptop">
+            <a href="">laptops</a>
+        </div>
+        <div class="card">
+            <img src="./assets/phone.jpg" alt="phone">
+            <a href="">phones</a>
+        </div>
+        <div class="card">
+            <img src="./assets/console.jpg" alt="console">
+            <a href="">consoles</a>
+        </div>
+      </div>
+
+        
+      <% } else{ %>
+      <div class="dayOff">
+          <h1><span class="sorry">Sorry,</span> we are currently closed.</h1>
+          <span class="TimeRest">
+            <h5 style="color: green;">time left</h5>
+            <div class="time">
+              <%= day  %> <div class="blink"> : </div> days
+              <%= hour %> <div class="blink"> : </div> hours
+              <%= minute %> <div class="blink"> : </div> minutes
+              <%= second %> <div class="blink"> : </div> seconds
+            </div>
+          </span>
+          <p>
+            We are open Monday to Friday, from 9 AM to 5 PM. Please come back on our working hours
+          </p>
+      </div>
+      <% } %>
+    
+  </body>
+</html>

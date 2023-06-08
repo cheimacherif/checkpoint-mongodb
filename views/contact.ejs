@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navbar') %>
+   
+    <% if (workinghours){ %>
+    <div class="workDay">
+        <h1>contact</h1>
+        <div class="servcie_container">
+            <p>phone : 9999999999 <br> email: shop@gmail.com</p>
+        </div>
+    </div>
+      
+    <% } else{ %>
+    <div class="dayOff">
+        <h1><span class="sorry">Sorry,</span> we are currently closed.</h1>
+        <p>
+            if you have an emergency case contact us to 'emergency@gmail.com' or call us on 555
+        </p>
+        <span class="TimeRest">
+            <h5 style="color: green;">time left</h5>
+            <div class="time">
+              <%= day  %> <div class="blink"> : </div> days
+              <%= hour %> <div class="blink"> : </div> hours
+              <%= minute %> <div class="blink"> : </div> minutes
+              <%= second %> <div class="blink"> : </div> seconds
+            </div>
+          </span>
+    </div>
+    <% } %>
+</body>
+</html>
